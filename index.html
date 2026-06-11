@@ -1230,6 +1230,44 @@
   <!-- Back To Top End -->
 
   <script src="dist/js/script.js"></script>
+
+  <!-- Scrollspy: highlight active nav link on scroll -->
+  <style>
+    #nav-menu a[href^="#"] {
+      transition: color 0.3s ease;
+    }
+
+    #nav-menu a.nav-active {
+      color: #14b8a6 !important;
+      font-weight: 600;
+    }
+  </style>
+  <script>
+    (function () {
+      const links = Array.from(document.querySelectorAll('#nav-menu a[href^="#"]'));
+      const map = new Map();
+      links.forEach((link) => {
+        const section = document.getElementById(link.getAttribute("href").slice(1));
+        if (section) map.set(section, link);
+      });
+      if (!map.size) return;
+
+      const setActive = (active) => {
+        links.forEach((link) => link.classList.toggle("nav-active", link === active));
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) setActive(map.get(entry.target));
+          });
+        },
+        { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
+      );
+
+      map.forEach((_, section) => observer.observe(section));
+    })();
+  </script>
 </body>
 
 </html>
