@@ -11,6 +11,20 @@
   <meta name="author" content="david aryasetia febrian susanto" />
   <link rel="stylesheet" href="/dist/css/final.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#14b8a6",
+            secondary: "#64748b",
+            dark: "#0f172a",
+          },
+        },
+      },
+    };
+  </script>
 
   <title>David Aryasetia</title>
   <!-- Google tag (gtag.js) -->
@@ -71,9 +85,13 @@
                 class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Skill</a>
             </li>
             <li class="group">
+              <a href="#certifications"
+                class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">License & Certification</a>
+            </li>
+            <!-- <li class="group">
               <a href="#blog"
                 class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
-            </li>
+            </li> -->
             <li class="group">
               <a href="#contact"
                 class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
@@ -99,36 +117,45 @@
   <!-- Header End -->
 
   <!-- Hero Section Start -->
-  <section id="home" class="pt-24 md:pt-32 lg:pt-32 dark:bg-dark">
+  <section id="home" class="flex min-h-screen items-center pt-24 pb-12 md:pt-20 lg:pt-16 dark:bg-dark">
     <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full self-center px-4 lg:w-1/2">
+      <div class="grid grid-cols-1 items-center gap-x-8 lg:grid-cols-2">
+        <!-- A: greeting + name + role -->
+        <div class="px-4 lg:col-start-1 lg:row-start-1">
           <h1 class="text-base font-semibold text-primary md:text-xl">
             Hi All 🖐, My Name
             <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">
               David Aryasetia
             </span>
           </h1>
-          <h2 class="mb-4 text-lg font-medium text-secondary lg:text-2xl">
+          <h2 class="mt-2 text-lg font-medium text-secondary lg:text-2xl">
             Backend Developer &
             <span class="text-dark dark:text-white">
               Database Administrator
             </span>
           </h2>
-          <p class="mb-10 font-medium leading-relaxed text-secondary text-sm md:text-base lg:text-base">
+        </div>
+
+        <!-- B: photo -->
+        <div class="px-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
+          <div class="group relative mx-auto mt-8 max-w-md sm:max-w-lg lg:mt-0 lg:max-w-xl">
+            <div class="absolute -inset-4 -z-0 rounded-[2.5rem] bg-primary/10 blur-2xl"></div>
+            <img src="dist/img/davidok.jpg"
+              alt="David Aryasetia at his developer workstation"
+              class="relative z-10 aspect-[4/3] w-full rounded-2xl object-cover object-center shadow-xl ring-1 ring-slate-900/5 transition duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl dark:ring-white/10" />
+          </div>
+        </div>
+
+        <!-- C: tagline + CTA -->
+        <div class="mt-8 px-4 lg:col-start-1 lg:row-start-2 lg:mt-4">
+          <p class="mb-8 font-medium leading-relaxed text-secondary text-sm md:text-base lg:text-base">
             <span class="block">Passionate About Backend Development | Database Administration and Database Engineer |
               SQL Developer<br></span>
             <span class="block">Microservices Architecture | Cloud Infrastructure Administration | OOP Principle</span>
           </p>
           <a href="https://wa.me/082232668794"
-            class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-teal-400 hover:opacity-80 hover:shadow-lg">Contact
+            class="inline-block rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:bg-teal-400 hover:opacity-80 hover:shadow-lg">Contact
             Me</a>
-        </div>
-
-        <div class="w-full self-end px-4 lg:w-1/2">
-          <div class="relative mt-10 lg:right-0 lg:mt-0">
-            <img src="dist/img/David.png" alt="David" class="relative z-10 mx-auto max-w-full" />
-          </div>
         </div>
       </div>
     </div>
@@ -181,7 +208,7 @@
                 <strong>Cloud Infrastructure Deployment</strong> using <strong>OCI (Oracle Cloud
                   Infrastructure) Leveraging</strong>,
                 <strong>Nginx, PM2, Gunicorn, NetData, CI/CD(Jenkins), Portainer, Docker, SSL (Let's Enscrypt), Kafka,
-                  Grafana, Elastic Stack</strong>
+                  Grafana, Prometheus, Node-exporter, Cadvisor, Zabbix, Elastic Stack (Elastic, Logstash, Kibana)</strong>
               </li>
               <li class="hover:text-primary transition-colors duration-200">
                 <strong>Design System</strong> using <strong>UML, Sequence Diagram, Flow Chart, and Use case
@@ -369,12 +396,9 @@
               Status : Active
             </h3>
             <p class="text-base font-medium text-secondary">
-              This project focuses on the development of a mobile web application aimed at recognizing and promoting
-              Lombok Island's unique gastronomic heritage. Utilizing a Deep Learning model with Siamese Neural Network
-              architecture, users can easily capture images of traditional Lombok dishes through their smartphone or
-              photo gallery. These images are sent to a server where they are identified using a pre-trained model. The
-              application then provides detailed gastronomic information about the recognized dish, including historical
-              and cultural insights.
+              A mobile web app that recognizes and promotes Lombok's culinary heritage. Users snap a photo of a
+              traditional dish, and a Deep Learning model (Siamese Neural Network) identifies it and returns its
+              gastronomic details, history, and cultural background.
             </p>
             <span class="inline-flex items-center mt-4 text-primary font-semibold transition-transform hover:underline">
               See details
@@ -408,12 +432,9 @@
               Status : Active
             </h3>
             <p class="text-base font-medium text-secondary">
-              This project focuses on the development of the Gastronomi Backend & Admin App, a robust backend system
-              built with Laravel and powered by a PostgreeSQL database.
-              It is designed to support the gastronomic food recognition platform on Lombok Island, offering seamless
-              integration with the frontend via RESTful APIs.
-              This system allows for efficient data communication between the mobile frontend and backend server,
-              ensuring that users can explore Lombok's rich culinary heritage.
+              The Gastronomi Backend & Admin App — a Laravel + PostgreSQL backend powering the Lombok food-recognition
+              platform. It exposes RESTful APIs for seamless, efficient data exchange between the mobile frontend and the
+              server.
             </p>
             <span class="inline-flex items-center mt-4 text-primary font-semibold transition-transform hover:underline">
               See details
@@ -490,10 +511,8 @@
               Status : Active
             </h3>
             <p class="text-base font-medium text-secondary">
-              TeachFinder is a location-based online tutor search application designed to connect students with
-              qualified tutors in their area. The platform leverages advanced geolocation technology to help users find
-              the best tutors for various subjects, tailored to their specific needs and preferences. TeachFinder allows
-              students to browse tutor profiles, check ratings and reviews, and schedule lessons with ease.
+              A location-based app connecting students with qualified tutors nearby. Using geolocation, students browse
+              tutor profiles, check ratings & reviews, and schedule lessons with ease.
             </p>
             <span class="inline-flex items-center mt-4 text-primary font-semibold transition-transform hover:underline">
               See details
@@ -529,13 +548,9 @@
               Status : Active
             </h3>
             <p class="text-base font-medium text-secondary">
-              The Internal Quality Audit Information System (SIM-AMI) is a platform developed to streamline the internal
-              quality audit process in higher education institutions,
-              specifically implemented in Politeknik Elektronika Negeri Surabaya.
-              It addresses challenges in manual monitoring, spreadsheet-based data management, and inefficiencies in
-              report generation.
-              The system adheres to Ministerial Regulation No. 53 of 2023 and focuses on auditing performance indicators
-              (IKUK) while improving data management and ensuring compliance with regulations.
+              An Internal Quality Audit Information System (SIM-AMI) for higher education, built for Politeknik
+              Elektronika Negeri Surabaya. It replaces manual, spreadsheet-based monitoring and automates audit
+              reporting — compliant with Ministerial Regulation No. 53/2023 and focused on performance indicators (IKUK).
             </p>
             <span class="inline-flex items-center mt-4 text-primary font-semibold transition-transform hover:underline">
               See details
@@ -569,13 +584,9 @@
               Status : Active
             </h3>
             <p class="text-base font-medium text-secondary">
-              This project showcases experience in managing and deploying a web server infrastructure on a free Oracle
-              Cloud VPS.
-              The server hosts multiple web projects using Nginx as the web server MySQL,PostgreeSQL for database
-              management, Netdata for real-time performance monitoring, and Gunicorn as the application server engine
-              for Django-based applications.
-              Leveraging Oracle's cloud services, this setup provides a scalable and efficient environment, ideal for
-              supporting various online projects with real-time monitoring, and optimized performance.
+              Managing and deploying a web-server infrastructure on a free Oracle Cloud VPS. It hosts multiple projects
+              with Nginx, MySQL/PostgreSQL, Gunicorn (for Django apps), and Netdata for real-time monitoring — a
+              scalable, efficient setup with optimized performance.
             </p>
             <span class="inline-flex items-center mt-4 text-primary font-semibold transition-transform hover:underline">
               See details
@@ -591,74 +602,138 @@
   <!-- Portfolio Section End -->
 
   <!-- Clients Section Start -->
-  <section id="clients" class="bg-slate-800 pt-20 md:pt-32 lg:pt-32 pb-20 md:pb-32 lg:pb-32 dark:bg-slate-400">
+  <section id="clients" class="bg-slate-800 pt-20 md:pt-32 lg:pt-32 pb-20 md:pb-32 lg:pb-32 dark:bg-dark">
     <div class="container">
       <div class="w-full px-4">
         <div class="mx-auto text-center">
           <h4 class="mb-2 text-lg font-semibold text-primary">Skill</h4>
-          <h2 class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl">
+          <h2 class="mb-4 text-3xl font-bold text-white dark:text-white sm:text-4xl lg:text-5xl">
             Ability Possesed
           </h2>
           <p class="text-medium font-medium text-slate-300 md:text-lg">
             Strong concepts in Object-Oriented Programming (OOP), HTML, CSS, and JavaScript, with hands-on experience in
             frameworks such as React.js, Laravel, Flask-RESTX, Django, and Tailwind CSS. Also experienced in cloud
-            infrastructure and server deployment using Nginx,Gunicorn, Docker, and PM2.
+            infrastructure, CI/CD, and observability — deploying with Nginx, Gunicorn, Docker, and PM2, and monitoring
+            systems using Grafana, Prometheus, Zabbix, and the ELK stack.
           </p>
         </div>
       </div>
 
       <div class="w-full px-4">
-        <div class="flex flex-wrap items-center justify-center">
+        <h3 class="mt-10 mb-4 text-center text-xl font-semibold text-white dark:text-white sm:text-2xl">
+          Programming &amp; Development
+        </h3>
+        <div class="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-6 gap-y-8 sm:gap-x-8">
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/html-1.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">HTML</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/html-1.svg" alt="HTML" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">HTML</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/css-3.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">CSS</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/css-3.svg" alt="CSS" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">CSS</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/javascript-1.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">
-              JavaScript
-            </p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/javascript-1.svg" alt="JavaScript" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">JavaScript</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/python.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">
-              Python
-            </p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/python.svg" alt="Python" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Python</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/flask-restx.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">
-              Flask-RestX
-            </p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/flask-restx.svg" alt="Flask-RestX" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Flask-RestX</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/laravel.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">Laravel</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/laravel.svg" alt="Laravel" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Laravel</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/react-2.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">ReactJS</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/react-2.svg" alt="ReactJS" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">ReactJS</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/mysql.svg" alt="HTML" />
-            <p class="font-semibold1 mt-5 text-center text-white">MySQL Database</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/mysql.svg" alt="MySQL" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">MySQL Database</p>
           </a>
           <a href="#"
-            class="mx-4 max-w-[64px] md:max-w-[90px] lg:max-w-[90px] py-4 md:py-10 lg:py-10 opacity-60 transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-5 xl:mx-8">
-            <img src="dist/img/Clients/postgre.svg" alt="HTML" class="w-48" />
-            <p class="font-semibold1 mt-5 text-center text-white">PostgreeSQL Database</p>
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/postgre.svg" alt="PostgreSQL" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">PostgreeSQL Database</p>
+          </a>
+        </div>
+
+        <h3 class="mt-12 mb-4 text-center text-xl font-semibold text-white dark:text-white sm:text-2xl">
+          DevOps, Infrastructure &amp; Monitoring
+        </h3>
+        <div class="mx-auto flex max-w-5xl flex-wrap justify-center gap-x-6 gap-y-8 sm:gap-x-8">
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/docker.svg" alt="Docker" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Docker</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/portainer.svg" alt="Portainer" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Portainer</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/nginx.svg" alt="Nginx" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Nginx</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/jenkins.svg" alt="Jenkins" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Jenkins</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/kafka.svg" alt="Apache Kafka" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Kafka</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/prometheus.svg" alt="Prometheus" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Prometheus</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/node-exporter.svg" alt="Node Exporter" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Node Exporter</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/cadvisor.svg" alt="cAdvisor" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">cAdvisor</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/grafana.svg" alt="Grafana" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Grafana</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/zabbix.svg" alt="Zabbix" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Zabbix</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/elasticsearch.svg" alt="Elasticsearch (ELK)" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">Elasticsearch (ELK)</p>
+          </a>
+          <a href="#"
+            class="group flex w-20 flex-col items-center opacity-60 transition duration-500 hover:opacity-100 sm:w-24">
+            <img src="dist/img/Clients/apm-server.svg" alt="APM Server" class="h-12 w-12 object-contain md:h-14 md:w-14" />
+            <p class="mt-3 text-center text-xs font-medium leading-snug text-white dark:text-white sm:text-sm">APM Server</p>
           </a>
         </div>
       </div>
@@ -666,8 +741,256 @@
   </section>
   <!-- Clients Section Ends -->
 
+  <!-- License & Certification Section Start -->
+  <section id="certifications" class="bg-slate-50 pt-20 md:pt-28 lg:pt-28 pb-20 md:pb-28 lg:pb-28 dark:bg-slate-800">
+    <div class="container">
+      <div class="mb-12 w-full px-4">
+        <div class="mx-auto max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-semibold text-primary">Portfolio</h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+            Licenses &amp; Certifications
+          </h2>
+          <p class="text-medium font-medium text-secondary md:text-lg dark:text-slate-300">
+            Over the years, I've earned a range of professional credentials — growing my knowledge across cloud,
+            databases, and app developments.
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full px-4">
+        <div class="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/aws.svg" alt="Amazon Web Services (AWS)" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">AWS Academy Graduate - Cloud Architecting</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Amazon Web Services (AWS)</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Mar 2023</p>
+            <a href="https://www.credly.com/badges/77838349-30e5-4c82-bef9-2f5236a8f314" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/aws.svg" alt="Amazon Web Services (AWS)" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">AWS Academy Graduate - Cloud Developing</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Amazon Web Services (AWS)</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued May 2024</p>
+            <a href="https://www.credly.com/badges/d9255c05-03c2-4ff4-a8e6-48a629f80a10" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/datacamp.svg" alt="DataCamp" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Database Design</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">DataCamp</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jan 2025</p>
+            <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/ebeecd5886abecafb0191936459b6fcb7c4bc53f" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/datacamp.svg" alt="DataCamp" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Data Manipulation in SQL</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">DataCamp</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jan 2025</p>
+            <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/57162a5cd646b6d72892d7ec0b4e902f903fb356" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/datacamp.svg" alt="DataCamp" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Joining Data in SQL</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">DataCamp</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Dec 2024</p>
+            <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/475d9f7b5895bed38430fc94f2a17bd88bdd0a26" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/datacamp.svg" alt="DataCamp" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Intermediate SQL</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">DataCamp</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Dec 2024</p>
+            <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/ab4dc85e719004b6738a61a5719381e166e8cd4d" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/datacamp.svg" alt="DataCamp" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Introduction to SQL</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">DataCamp</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Dec 2024</p>
+            <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/cb12ccaf41d13cec531d8a236caff83240dc0d81" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/bnsp.png" alt="Badan Nasional Sertifikasi Profesi (BNSP)" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Developing Dynamic Web Application</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Badan Nasional Sertifikasi Profesi (BNSP)</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jul 2022 · Expires Jul 2025</p>
+            <a href="https://drive.google.com/file/d/1Lu1K_9qF5PM68W7lYsSKczIp1NMTxGI9/view" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/digitalent.png" alt="Digital Talent Scholarship" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Database (Talent Scouting Academy)</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Digital Talent Scholarship</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jul 2024</p>
+            <a href="https://drive.google.com/file/d/11sHQo57jtL0pcioNyOwS8lMXwoDDuwVU/view" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/hackerrank.svg" alt="HackerRank" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">SQL (Basic)</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">HackerRank</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jan 2024</p>
+            <a href="https://www.hackerrank.com/certificates/883e5aeb46f8" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/hackerrank.svg" alt="HackerRank" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">SQL (Intermediate)</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">HackerRank</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jan 2024</p>
+            <a href="https://www.hackerrank.com/certificates/fc7eb6158dff" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/codecademy.svg" alt="Codecademy" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Learn C++: Introduction Course</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Codecademy</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Sep 2023</p>
+            <a href="https://www.codecademy.com/profiles/David_Aryasetia/certificates/edc9d8b145f845159ba1a10533c3b074" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/codecademy.svg" alt="Codecademy" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Learn C++ Course</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Codecademy</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Sep 2023</p>
+            <a href="https://www.codecademy.com/profiles/David_Aryasetia/certificates/b74a2390dfc4127fa5d43fe147425ad0" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/skilvul.png" alt="Skilvul" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">JavaScript Intermediate</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Skilvul</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Aug 2023 · Expires Aug 2025</p>
+            <a href="https://skilvul.com/courses/javascript-intermediate/student/cl5q5x7g0079z01lq3myan5q2/" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/skilvul.png" alt="Skilvul" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">JavaScript Dasar</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Skilvul</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jul 2022 · Expires Jul 2024</p>
+            <a href="https://skilvul.com/courses/javascript-dasar/student/cl5q5x7g0079z01lq3myan5q2/" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+          <div
+            class="group flex flex-col rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900">
+            <div class="mb-3 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-50 p-2 dark:bg-slate-800">
+              <img src="dist/img/Certs/skilvul.png" alt="Skilvul" class="max-h-full max-w-full object-contain" />
+            </div>
+            <h3 class="mb-1 text-sm font-bold leading-snug text-dark dark:text-white">Coding di Skilvul</h3>
+            <p class="text-xs font-medium text-secondary dark:text-slate-400">Skilvul</p>
+            <p class="mb-3 text-xs text-slate-400 dark:text-slate-500">Issued Jul 2022 · Expires Jul 2024</p>
+            <a href="https://skilvul.com/paths/coding-di-skilvul-playground/student/cl5q5x7g0079z01lq3myan5q2/" target="_blank" rel="noopener"
+              class="mt-auto inline-flex w-fit items-center gap-1.5 rounded-full border border-primary px-3 py-1.5 text-xs font-semibold text-primary transition duration-300 hover:bg-primary hover:text-white">
+              Show credential
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5h5v5M19 5l-9 9M10 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-4" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- License & Certification Section End -->
+
   <!-- Blog Section Start -->
-  <section id="blog" class="bg-slate-100 pt-20 md:pt-32 lg:pt-32 pb-20 md:pb-20 lg:pb-20 dark:bg-dark">
+  <!-- <section id="blog" class="bg-slate-100 pt-20 md:pt-32 lg:pt-32 pb-20 md:pb-20 lg:pb-20 dark:bg-dark">
     <div class="container">
       <div class="mb-10 w-full px-4">
         <div class="mx-auto max-w-xl text-center">
@@ -742,7 +1065,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Blog Section End -->
 
   <!-- Contact Section Start -->
