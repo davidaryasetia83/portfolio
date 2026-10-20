@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{print $5, $9}')",
+      "Bash(awk '{printf \"%.1f KB\\\\t%s\\\\n\", $1/1024, $2}')",
+      "Bash(curl -sS -H \"Accept-Encoding: gzip, br, deflate\" -D - -o /dev/null https://davidaryasetia.site)",
+      "Bash(curl -sS -D - -o /dev/null \"https://davidaryasetia.site/dist/img/Portfolio/lombok4.PNG\")",
+      "Bash(curl -sS -H \"Accept-Encoding: gzip\" -D - -o /dev/null \"https://davidaryasetia.site/dist/css/final.css\")",
+      "Bash(./node_modules/.bin/tailwindcss -i src/input.css -o dist/css/final.css --minify)",
+      "Bash(curl -sS -o /dev/null -w \"%{size_download}\\\\n\" https://davidaryasetia.site)",
+      "Read(//etc/nginx/**)",
+      "Bash(npx playwright *)",
+      "Bash(sudo cp /etc/nginx/sites-available/davidaryasetia.conf /etc/nginx/sites-available/davidaryasetia.conf.bak-__CMDSUB_OUTPUT__)",
+      "Bash(sudo cp /tmp/claude-1001/-var-www-MyPortfolio/b88d3885-aff7-49d5-8ae8-4e825fd4d025/scratchpad/davidaryasetia.conf /etc/nginx/sites-available/davidaryasetia.conf)",
+      "Bash(sudo nginx -t)",
+      "Bash(sudo systemctl reload nginx)",
+      "Bash(sudo sed -i '/add_header Cache-Control \"public, max-age=604800\";/d' /etc/nginx/sites-available/davidaryasetia.conf)",
+      "Bash(curl -sS -D - -o /dev/null https://davidaryasetia.site/dist/img/davidok.webp)",
+      "Bash(sudo grep -rnE \"add_header Cache-Control|Cache-Control.*public\" /etc/nginx/)",
+      "Bash(curl -sS -D - -o /dev/null \"https://davidaryasetia.site/dist/img/davidok.webp?v=$\\(date +%s\\)\")",
+      "Bash(curl -sS -D - -o /dev/null \"https://davidaryasetia.site/dist/img/lombok4.webp\")"
+    ]
+  }
+}
